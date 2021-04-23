@@ -13,10 +13,10 @@ fetchPromise.then(response => {//la promesse
             inputJS.innerHTML +=`
             <div class="container col-md-6 col-lg-4">
                <div class="affichage_produit mt-4 card bg-white">
-                  <img class=”card-img-top” src="${imageUrl}"  alt="appareil ${name}">
+                  <img class=”card-img-top” src="`+ imageUrl + `"  alt="appareil `+ name +`">
                   <div class="card-body text-center">
-                     <h3 class="card-title">${name}</h3>
-                     <span>${price/100}€</span></p>
+                     <h3 class="card-title">`+ name +`</h3>
+                     <span>`+ price/100 +`€</span></p>
                      <div class="text-center mt-4" ><a id="bouton" type="button" class="btn btn-secondary text-white" onclick="window.location.href = 'products.html?id=${_id}'">En savoir plus</a></div>
                   </div>
                </div>
@@ -26,4 +26,3 @@ fetchPromise.then(response => {//la promesse
 
 }
 getRequest()
-cartNumber()

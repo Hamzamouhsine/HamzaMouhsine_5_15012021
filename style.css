@@ -4,6 +4,6 @@ header{
 .titre{
     font-size: 12em;
 }
-#banner {
+#banner,footer {
 	background-color: #f3e9f1;
 }
