@@ -68,6 +68,57 @@
 				<div id="panier_vide" class="text-center"></div>
 			</div>
 		</section>
+		<section id="formulaire" class="container bg-white pb-4 rounded mt-4">
+			<form class="text-center mx-auto pb-4 pt-4">
+				<h1 class="col-8 rounded mx-auto mb-4 bg-secondary text-white"> VALIDATION DE COMMANDE</h1>
+				<div class="text-center pb-4">
+					Veuillez renseignez vos coordonnées pour finaliser votre commande
+				</div>
+				<div class="form-row justify-content-center">
+					<div class="form-group form-inline justify-content-center mr-2">
+						<label for="name" class="mr-2">NOM</label>
+						<input type="text" class="champ form-control" id="name" name="name" />
+					</div>
+					<div class="form-group form-inline justify-content-center">
+						<label for="firstname" class="mr-2">PRENOM</label>
+						<input type="text" class="champ form-control" id="firstname" name="firstname"/>
+					</div>
+				</div>
+				<div class="form-row justify-content-center">
+					<div class="form-group form-inline justify-content-center mr-2">
+						<label for="adress" class="mr-2">ADRESSE</label>
+						<input type="text" class="champ form-control" id="adress" name="adress" />
+					</div>
+				</div>
+				<div class="form-row justify-content-center">
+					<div class="form-group form-inline justify-content-center mr-2">
+						<label for="city" class="mr-2">VILLE</label>
+						<input type="text" class="champ form-control" id="city" name="city"  />
+					</div>
+					<div class="form-group form-inline justify-content-center mr-2">
+						<label for="postalcode" class="mr-2">CODE POSTAL</label>
+						<input type="text" class="champ form-control" id="postalcode" name="postalcode"/>
+					</div>
+				</div>
+				<div id="erreur_code" class="mb-2"></div>
+				<div class="form-row justify-content-center">
+					<div class="form-group form-inline justify-content-center">
+						<label for="mail" class="mr-2">E-MAIL</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									@
+								</div>
+							</div>
+							<input type="email" class="champ form-control" id="mail" name="mail"  />
+						</div>
+					</div>
+				</div>
+				<div id="erreur_mail" class="mb-4"></div>
+				<input type="reset" id="rafraichir" name="rafraichir" value="Effacer" class="btn btn-outline-secondary" />
+				<input type="submit" id="envoi" name="envoi" value="Commander" class="btn btn-success" />
+			</form>
+		</section>
 
 		<footer class="bg text-white text-center py-5">
 			<div class="">
@@ -92,6 +143,7 @@
 		
 		
 		<script src="js/basket.js"></script>
+		<script src="js/cartnumber.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

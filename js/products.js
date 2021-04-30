@@ -64,4 +64,5 @@ function popUpPanier (){
   } 
   ducument.getElementById("msg").innerHTML = usePreference;
 }
-  ajoutContent();
+
+ajoutContent();

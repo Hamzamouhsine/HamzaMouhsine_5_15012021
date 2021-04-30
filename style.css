@@ -7,3 +7,7 @@ header{
 #banner,footer {
 	background-color: #f3e9f1;
 }
+/* PANIER*/
+#tableau_panier td {
+	vertical-align: middle;
+}
