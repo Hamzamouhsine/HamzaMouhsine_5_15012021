@@ -28,7 +28,7 @@
 								<span id="cart_number"></span>
 							</a>
 						</li>
-						<li class="nav-item ml-4"><a class="nav-link font-weight-bold" href="orderStatus.html">COMMANDE</a></li>
+						<li class="nav-item ml-4"><a class="nav-link font-weight-bold" href="confirmation.html">COMMANDE</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -41,7 +41,7 @@
 							<th class="text-center">
 								Article
 							</th>
-							<th class="text-center">
+							<th class="text-center pl-2">
 								Quantité
 							</th>
 							<th class="text-center">
@@ -75,29 +75,23 @@
 					Veuillez renseignez vos coordonnées pour finaliser votre commande
 				</div>
 				<div class="form-row justify-content-center">
-					<div class="form-group form-inline justify-content-center mr-2">
+					<div class="form-group form-inline justify-content-center">
 						<label for="name" class="mr-2">NOM</label>
 						<input type="text" class="champ form-control" id="name" name="name" />
 					</div>
-					<div class="form-group form-inline justify-content-center">
+					<div class="form-group form-inline justify-content-center ml-2">
 						<label for="firstname" class="mr-2">PRENOM</label>
 						<input type="text" class="champ form-control" id="firstname" name="firstname"/>
 					</div>
 				</div>
 				<div class="form-row justify-content-center">
-					<div class="form-group form-inline justify-content-center mr-2">
+					<div class="form-group form-inline justify-content-center">
 						<label for="adress" class="mr-2">ADRESSE</label>
 						<input type="text" class="champ form-control" id="adress" name="adress" />
 					</div>
-				</div>
-				<div class="form-row justify-content-center">
-					<div class="form-group form-inline justify-content-center mr-2">
+					<div class="form-group form-inline justify-content-center ml-2">
 						<label for="city" class="mr-2">VILLE</label>
 						<input type="text" class="champ form-control" id="city" name="city"  />
-					</div>
-					<div class="form-group form-inline justify-content-center mr-2">
-						<label for="postalcode" class="mr-2">CODE POSTAL</label>
-						<input type="text" class="champ form-control" id="postalcode" name="postalcode"/>
 					</div>
 				</div>
 				<div id="erreur_code" class="mb-2"></div>
@@ -121,7 +115,6 @@
 		</section>
 
 		<footer class="bg text-white text-center py-5">
-			<div class="">
 				<div class="container">
 					<div class="row">
 						<div class="col">
@@ -137,14 +130,15 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</footer>
 		
 		
 		
-		<script src="js/basket.js"></script>
-		<script src="js/cartnumber.js"></script>
+		
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="js/cartnumber.js"></script>
+		<script src="js/basket.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	</body>

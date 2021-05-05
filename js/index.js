@@ -25,5 +25,6 @@ fetchPromise.then(response => {//la promesse
 }))
 
 }
-getRequest()
-cartNumber()
+getRequest();
+cartNumber();
+

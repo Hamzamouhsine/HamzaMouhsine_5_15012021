@@ -56,13 +56,14 @@ function ajoutPanier() {
        
       }
 }
+//Affichage d'un alert pour confirmer l'ajout au panier
 function popUpPanier (){
   if (confirm("Vous avez ajouté un article au panier") == true) {
     usePreference = "Prêts pour de nouveaux clichés ?";
   } else {
     usePreference = "vous n'avez rien ajouté au panier";
   } 
-  ducument.getElementById("msg").innerHTML = usePreference;
 }
 
 ajoutContent();
+cartNumber();

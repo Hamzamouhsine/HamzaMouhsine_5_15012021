@@ -11,3 +11,24 @@ header{
 #tableau_panier td {
 	vertical-align: middle;
 }
+/* FORMULAIRE*/
+#formulaire p {
+	font-weight: bold;
+}
+#erreur_mail {
+	color: red;
+	font-size: 0.8em;
+}
+#erreur_code {
+	color: red;
+	font-size: 0.8em;
+}
+#no_command {
+	height: 500px;
+	display: flex;
+	align-items: center;
+}
+#confirmation {
+	display: flex;
+	align-items: center;
+}

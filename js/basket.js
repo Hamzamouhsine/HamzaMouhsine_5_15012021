@@ -10,6 +10,7 @@ if (panier) {
 function ligneTableau() {
   panier.forEach(function(result, index) {infosHTML(result, index);});
   totalPanier();
+  cartNumber();
 }
 //Ajout html pour chaque produit importé dans le panier
 function infosHTML(result, index) {
@@ -35,7 +36,7 @@ function totalPanier() {
     total = total + panier[index].price * panier[index].quantite;
     console.log(total);
   });
-  document.getElementById("prix_total").textContent = total + " €";
+  document.getElementById("prix_total").textContent = total+"€";
   localStorage.setItem("totalPanier", total);
 }
 //pour faire disparaitre le bouton, le panier, le formulaire lorsque le panier est vide
@@ -109,15 +110,6 @@ document.querySelector("#mail").addEventListener("blur", function() {
   }
 });
 
-//Evenement pour vérifier le champ postalcode en enlevant le focus
-document.querySelector("#postalcode").addEventListener("blur", function() {
-  const postalCode = document.querySelector("#postalcode").value;
-  const regexEmail = /[0-9]{5}/; //Utilisation de regex
-  if (!regexEmail.test(postalCode)) {
-    document.querySelector("#erreur_code").textContent =
-      "Code postal non valide. 5 chiffres obligatoires";
-  }
-});
 
 //Evenement pour effacer le formulaire
 document.querySelector("#rafraichir").addEventListener("click", function() {
@@ -181,6 +173,6 @@ function requestPost() {
 
 // CONFIRMATION DE COMMANDE
 function confirmCommand() {
-  alert("Votre commande a bien été validée, vous allez être redirigé", "", "success");
+  sweetAlert("Votre commande a bien été validée, vous allez être redirigé", "", "success");
   setTimeout(function() {window.location = 'confirmation.html'; }, 3000);
 }
