@@ -1,16 +1,10 @@
 # Orinoco #
+Cinquième projet du parcours développeur web chez OpenClassrooms.
 
-This is the back end server for Project 5 of the Junior Web Developer path.
+L'objectif principale consiste en la création du front-end d'un site e-commerce en Javascript par la consommation d'un API préalablement fourni ( JWDP5 ).
 
-### Prerequisites ###
+Il ne s'agit là que d'un MVP, aucune réelle gestion des transaction n'est effectué.
 
-You will need to have Node and `npm` installed locally on your machine.
+Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisateur.
 
-### Installation ###
-
-Clone this repo. From within the project folder, run `npm install`. You 
-can then run the server with `node server`. 
-The server should run on `localhost` with default port `3000`. If the
-server runs on another port for any reason, this is printed to the
-console when the server starts, e.g. `Listening on port 3001`.
-# HamzaMouhsine_5_15012021
+# https://hamzamouhsine.github.io/HamzaMouhsine_5_15012021/ #

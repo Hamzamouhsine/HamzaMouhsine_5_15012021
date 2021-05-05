@@ -1,14 +1,14 @@
 //Appel URL + API + fonctions pour afficher le produit
 function ajoutContent () {
     let id = new URL(window.location).searchParams.get('id')// on donne la valeur id = id de l'api
-    fetch("https://jwdp5.herokuapp.com/api/cameras/"+id)
+    fetch("https://jwdp5.herokuapp.com/api/cameras/"+id)// on cherche le données
       .then(response => response.json())
       .then (data => {
         
           article = data
           ajoutHTML()
           ajoutLenses()
-          console.log(article);        
+          console.log(article);       
       })
   }
   

@@ -1,8 +1,8 @@
-//afficher confirmation commande 
+//afficher confirmation de la commande 
 function showCommand() {
     let currentCommand = localStorage.getItem("idCommand");
   
-    if (currentCommand) {
+    if (currentCommand) {//si la commande est passée, on affiche le message de confirmation avec le detail
       document.getElementById("no_command").style.display = "none";
       document.getElementById("confirmation").innerHTML += `
         <div class="container col-10 text-center border shadow bg-white rounded p-4">
@@ -16,7 +16,7 @@ function showCommand() {
           <div>Merci de votre confiance et à bientôt</div>
         </div>
   `;
-    } else {
+    } else {//sinon on indique qu'il n'y a pas de commande en cours 
       document.getElementById("confirmation").style.display = "none";
       document.getElementById("no_command").innerHTML += `
       <div class="container col-10 text-center border shadow bg-white rounded p-4 ">
