@@ -42,9 +42,9 @@ function totalPanier() {
 //pour faire disparaitre le bouton, le panier, le formulaire lorsque le panier est vide
 function tableauVide() {
   document.getElementById("panier_vide").innerHTML += `
-    <div class="container col-6 text-center border shadow bg-white rounded p-4 ">
+    <div class="container col-6 text-center border shadow bg-white rounded p-5 my-5">
       <h3 class="mb-4">Votre panier est vide</h3>
-      <i class="fas fa-shopping-cart fa-1x"></i>
+      <i class="fas fa-shopping-cart fa-3x"></i>
     </div>`
   ;
   document.getElementById("tableau_panier").style.display = "none";
@@ -148,6 +148,7 @@ function requestPost() {
     products: idTableau,
   };
   console.log(order);
+  console.log("commende valid");
 
   const request = new Request( // On crée notre requête POST vers API
     "https://jwdp5.herokuapp.com/api/cameras/order",
@@ -170,7 +171,6 @@ function requestPost() {
       localStorage.setItem("infosOrder",JSON.stringify(order)); // on met à jour le localstorage avec infos de commande
     });
 }
-
 // CONFIRMATION DE COMMANDE
 function confirmCommand() {
   sweetAlert("Votre commande a bien été validée, vous allez être redirigé", "", "success");

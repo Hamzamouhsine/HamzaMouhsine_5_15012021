@@ -26,7 +26,7 @@ function showCommand() {
       `;
     }
   }
-  
+  console.log("message de confirmation");
   showCommand();
   cartNumber();
   

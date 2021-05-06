@@ -26,6 +26,7 @@ fetchPromise.then(response => {//on exécute la promesse
 }))
 
 }
+console.log("affichage articles")
 getRequest();
 cartNumber();
 
