@@ -33,7 +33,8 @@
 				</div>
 			</nav>
 		</header>
-		<section class="container bg-white pt-5 pb-5 rounded">
+		<section class="container bg-white pt-5 pb-5">
+			<h2 class="text-center my-4">PANIER</h2>
 			<div id="tableau_panier" class="">
 				<table class="table table-striped table-bordered table-sm">
 					<thead class="thead-default">
@@ -50,7 +51,7 @@
 							<th class="text-center">
 								Total
 							</th>
-							<th class="text-center"></th>
+							
 						</tr>
 					</thead>
 					<tbody id="ajout_panier"></tbody>
@@ -63,7 +64,7 @@
 				</table>
 			</div>
 			<div class="text-center">
-				<button id="vider_panier" class="btn btn-outline-secondary" type="button" onclick="viderPanier()">Vider le panier</button>
+				<button id="vider_panier" class="btn btn-outline-secondary mb-2" type="button" onclick="viderPanier()">Vider le panier</button>
 				<div id="valid_commande" class="btn btn-success"><a href="#formulaire" class="text-white">Poursuivre votre commande</a></div>
 				<div id="panier_vide" class="text-center"></div>
 			</div>

@@ -42,7 +42,7 @@ function totalPanier() {
 //pour faire disparaitre le bouton, le panier, le formulaire lorsque le panier est vide
 function tableauVide() {
   document.getElementById("panier_vide").innerHTML += `
-    <div class="container col-6 text-center border shadow bg-white rounded p-5 my-5">
+    <div class="container col-6 text-center border shadow bg-white rounded py-5 my-5">
       <h3 class="mb-4">Votre panier est vide</h3>
       <i class="fas fa-shopping-cart fa-3x"></i>
     </div>`
@@ -156,8 +156,8 @@ function requestPost() {
       method: "POST",
       body: JSON.stringify(order),
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+      Accept: "application/json",
+      "Content-Type": "application/json",
       }),
     }
   );
