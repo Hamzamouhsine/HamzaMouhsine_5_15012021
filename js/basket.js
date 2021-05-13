@@ -69,12 +69,11 @@ function annulerArticle(i) {
 //pour ajouter quantite dans le panier
 function quantitePlus(index) {
   let quantite = document.getElementById(`quantite_nombre`+index+``);
-  let ajoutQuantite = ++panier[index].quantite; //on incrémente la quantité dans le localstorage
+  let ajoutQuantite = ++panier[index].quantite; //on ajoute la quantité tapé dans le localstorage
   quantite.textContent = ajoutQuantite; //on met à jour la quantité dans le tableau
   let sousTotal = document.getElementById(`sous_total`+index+``);
   let ajoutTotal = panier[index].price * panier[index].quantite;
-  sousTotal.textContent = `${ajoutTotal} €`; //on met à jour le sous-total dans le tableau
-  //console.log(ajoutQuantite)
+  sousTotal.textContent = ``+ajoutTotal+`€`; //on met à jour le sous-total dans le tableau
   localStorage.setItem("panier", JSON.stringify(panier)); // on met à jour le localstorage
   totalPanier(); //on met à jour le total panier
   if (ajoutQuantite > 1) {
@@ -90,7 +89,6 @@ function quantiteMoins(index) {
   let sousTotal = document.getElementById(`sous_total`+index+``);
   let ajoutTotal = panier[index].price * panier[index].quantite;
   sousTotal.textContent = ``+ajoutTotal+`€`; //on met à jour le sous-total dans le tableau
-  //console.log(retraitQuantite)
   localStorage.setItem("panier", JSON.stringify(panier)); // on met à jour le localstorage
   totalPanier(); //on met à jour le total panier
   if (retraitQuantite <= 1) {
