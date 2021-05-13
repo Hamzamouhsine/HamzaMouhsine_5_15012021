@@ -89,7 +89,7 @@ function quantiteMoins(index) {
   quantite.textContent = retraitQuantite; //on met à jour la quantité dans le tableau
   let sousTotal = document.getElementById(`sous_total`+index+``);
   let ajoutTotal = panier[index].price * panier[index].quantite;
-  sousTotal.textContent = `${ajoutTotal} €`; //on met à jour le sous-total dans le tableau
+  sousTotal.textContent = ``+ajoutTotal+`€`; //on met à jour le sous-total dans le tableau
   //console.log(retraitQuantite)
   localStorage.setItem("panier", JSON.stringify(panier)); // on met à jour le localstorage
   totalPanier(); //on met à jour le total panier
