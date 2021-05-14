@@ -1,10 +1,10 @@
-const panier = JSON.parse(localStorage.getItem("panier"));
+const panier = JSON.parse(localStorage.getItem("panier"));//recuperation des donnes stockées dans le local storage
 
 //Condition pour afficher le panier
 if (panier) {
-    ligneTableau();
+    ligneTableau();//s'il y a un produit, afficher cette funtion
   } else {
-    tableauVide();
+    tableauVide();// sinon, afficher la funtion sans panier ne formulaire
   }
   //Boucle pour importer données de chaque article panier
 function ligneTableau() {
@@ -12,7 +12,7 @@ function ligneTableau() {
   totalPanier();
   cartNumber();
 }
-//Ajout html pour chaque produit importé dans le panier
+//function Ajout html pour chaque produit importé dans le panier
 function infosHTML(result, index) {
   document.getElementById("ajout_panier").innerHTML += `
     <tbody id="products-tablebody">
@@ -29,7 +29,7 @@ function infosHTML(result, index) {
       </tr>
     </tbody>`;
 }
-//calcul et affichage du prix total panier
+//function pour calcul et affichage du prix total panier
 function totalPanier() {
   let total = 0;
   panier.forEach(function(result, index) {
@@ -39,7 +39,7 @@ function totalPanier() {
   document.getElementById("prix_total").textContent = total+"€";
   localStorage.setItem("totalPanier", total);
 }
-//pour faire disparaitre le bouton, le panier, le formulaire lorsque le panier est vide
+//function pour ne pas faire apparaitre le panier et le formulaire quand il est vide et affichage message
 function tableauVide() {
   document.getElementById("panier_vide").innerHTML += `
     <div class="container col-6 text-center border shadow bg-white rounded py-5 my-5">
@@ -52,21 +52,21 @@ function tableauVide() {
   document.getElementById("formulaire").style.display = "none";
   document.getElementById("valid_commande").style.display = "none";
 }
-//pour vider le panier et le localStorage
+//function pour vider le panier et le localStorage
 function viderPanier() {
-  localStorage.clear();
-  location.reload();
+  localStorage.clear();// on le retire du localstorage
+  location.reload();//Mise à jour de la page pour affichage de la suppression au client
 }
-// pour retirer article du panier
+//function pour retirer article du panier -
 function annulerArticle(i) {
-  panier.splice(i, 1);// on supprime un item du panier
+  panier.splice(i, 1);// on supprime un item du panier avec la methode splice
   localStorage.clear(); // on le retire du localstorage
   // Mise à jour du nouveau panier après suppression de l'article
   localStorage.setItem("panier", JSON.stringify(panier));
   //Mise à jour de la page pour affichage de la suppression au client
   window.location.reload();
 }
-//pour ajouter quantite dans le panier
+//function pour ajouter quantite dans le panier +
 function quantitePlus(index) {
   let quantite = document.getElementById(`quantite_nombre`+index+``);
   let ajoutQuantite = ++panier[index].quantite; //on ajoute la quantité tapé dans le localstorage
@@ -81,7 +81,7 @@ function quantitePlus(index) {
   }
 }
 
-//pour retirer quantite dans le panier
+//function pour retirer quantite dans le panier -
 function quantiteMoins(index) {
   let quantite = document.getElementById(`quantite_nombre`+index+``);
   let retraitQuantite = --panier[index].quantite; //on décrémente la quantité dans le localstorage
@@ -101,7 +101,7 @@ function quantiteMoins(index) {
 //Evenement pour vérifier le champ mail en enlevant le focus
 document.querySelector("#mail").addEventListener("blur", function() {
   const mail = document.querySelector("#mail").value;
-  const regexEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; //Utilisation de regex
+  const regexEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; //Utilisation de regex pour valider le champ de saisie
   if (!regexEmail.test(mail)) {
     document.querySelector("#erreur_mail").textContent =
       "Adresse email non valide";
@@ -110,7 +110,7 @@ document.querySelector("#mail").addEventListener("blur", function() {
 
 
 //Evenement pour effacer le formulaire
-document.querySelector("#rafraichir").addEventListener("click", function() {
+  document.querySelector("#rafraichir").addEventListener("click", function() {
   document.querySelector("#erreur_mail").textContent = "";
   document.querySelector("#erreur_code").textContent = "";
 });
@@ -132,7 +132,7 @@ document.querySelector("#formulaire").addEventListener("submit", function(event)
   totalPanier()
 });
 
-//pour créer la requete POST avec numero commande et infos contact
+//function pour créer la requete POST avec numero commande et les infos contacts
 function requestPost() {
   const idTableau = panier.map(function (product) {return product.id;});
   let order = {
@@ -148,7 +148,7 @@ function requestPost() {
   console.log(order);
   console.log("commende valid");
 
-  const request = new Request( // On crée notre requête POST vers API
+  const request = new Request( // On crée notre requête POST vers API en lui passant en paramétres les données a envoyer
     "https://jwdp5.herokuapp.com/api/cameras/order",
     {
       method: "POST",
@@ -169,7 +169,7 @@ function requestPost() {
       localStorage.setItem("infosOrder",JSON.stringify(order)); // on met à jour le localstorage avec infos de commande
     });
 }
-// CONFIRMATION DE COMMANDE
+//FUNCTION POUR ALERT (CONFIRMATION DE COMMANDE)
 function confirmCommand() {
   sweetAlert("Votre commande a bien été validée, vous allez être redirigé", "", "success");
   setTimeout(function() {window.location = 'confirmation.html'; }, 3000);

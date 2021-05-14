@@ -1,12 +1,12 @@
 function getRequest(){
-//on chertche le données dans l'api
+//on cherche le données dans l'api avec un const
 const fetchPromise = fetch("https://jwdp5.herokuapp.com/api/cameras");
 const inputJS = document.getElementById("produits");//pour inserer par la suite les données dans la div "produit"
 
 fetchPromise.then(response => {//on exécute la promesse
-  return response.json(); // response le résultat sous format json
+  return response.json(); // response résultat sous format json (format textuel)
 })
-.then((data => {
+.then((data => {//qu'on utilise pour une nouvelle action
   data.forEach((item)  => { //pour chaque item récupéré de l'API
           //La méthode forEach() permet d'exécuter une fonction donnée sur chaque élément du tableau.
     const { name, price, _id, description, imageUrl } = item;//on crée une constante name, price_id etc..

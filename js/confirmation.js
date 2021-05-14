@@ -1,4 +1,4 @@
-//afficher confirmation de la commande 
+//function pour afficher la confirmation de la commande 
 function showCommand() {
     let currentCommand = localStorage.getItem("idCommand");
   

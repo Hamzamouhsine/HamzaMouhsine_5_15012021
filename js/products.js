@@ -1,7 +1,7 @@
 //Appel URL + API + fonctions pour afficher le produit
 function ajoutContent () {
     let id = new URL(window.location).searchParams.get('id')// on donne la valeur id = id de l'api
-    fetch("https://jwdp5.herokuapp.com/api/cameras/"+id)// on cherche le données
+    fetch("https://jwdp5.herokuapp.com/api/cameras/"+id)// on cherche les données
       .then(response => response.json())
       .then (data => {
         
@@ -12,14 +12,13 @@ function ajoutContent () {
       })
   }
   
-  //Ajout lentilles pour chaque item renseignée dans l'API
-  //A chaque exécution de la boucle, la variable est icrémentée du un (i ++), elle se termine quand il n'a plus d'objets 
-  // ajout option dans le html
+  //function Ajout lentilles pour chaque item dans l'API
   function ajoutLenses() {
-    for (let i = 0; i < article.lenses.length; i++) {
+    for (let i = 0; i < article.lenses.length; i++) {//A chaque exécution de la boucle, la variable est incrémentée de un (i ++), elle se termine quand il n'y a plus d'objets 
     document.getElementById("lense_select").innerHTML += `<option value="`+ article.lenses[i] +`">`+ article.lenses[i] +`</option>`
-    }
+    }// ajout option dans le html
   }
+
   // Présentation produit HTML
   function ajoutHTML() {
     document.getElementById('focus_produit').innerHTML += 
@@ -38,7 +37,7 @@ function ajoutPanier() {
     if (lentilles == "") { //si aucune lentille choisie, affichage message erreur
       alert("Vous devez choisir un objectif");
     } else {
-        const panier = JSON.parse(localStorage.getItem("panier")) || [] //On extrait notre json 
+        const panier = JSON.parse(localStorage.getItem("panier")) || [] //On extrait notre json (panier)
         panier.push({ //pour chaque article, on pousse les infos suivantes dans le panier
           image : article.imageUrl,
           name : article.name,
@@ -56,7 +55,7 @@ function ajoutPanier() {
        
       }
 }
-//Affichage d'un alert pour confirmer l'ajout au panier
+//Affichage d'un pop up pour confirmer l'ajout au panier
 function popUpPanier (){
   if (confirm("Vous avez ajouté un article au panier") == true) {
     usePreference = "Prêts pour de nouveaux clichés ?";
